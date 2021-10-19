@@ -7,31 +7,31 @@ sap.ui.define([
    return UIComponent.extend("walkthrough1.Component", {
       metadata : {
          "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-         "rootView": {
-            "viewName": "walkthrough1.view.App",
-            "type": "XML",
-            /*"async": true, // implicitly set via the sap.ui.core.IAsyncContentCreation interface*/
-            "id": "app"
-         }
+          manifest:"json"
+         //  "rootView": {
+        //     "viewName": "walkthrough1.view.App",
+        //     "type": "XML",
+        //     /*"async": true, // implicitly set via the sap.ui.core.IAsyncContentCreation interface*/
+        //     "id": "app"
+        //  }
       },
       init : function () {
          // call the init function of the parent
          UIComponent.prototype.init.apply(this, arguments);
          // set data model
          var oData = {
-            recipient =[ {
+            recipient : {
                name : "World"
             }
-        ]
          };
          var oModel = new JSONModel(oData);
          this.setModel(oModel);
 
-         // set i18n model
-         var i18nModel = new ResourceModel({
-            bundleName: "walkthrough1.i18n.i18n"
-         });
-         this.setModel(i18nModel, "i18n");
+        //  // set i18n model
+        //  var i18nModel = new ResourceModel({
+        //     bundleName: "walkthrough1.i18n.i18n"
+        //  });
+        //  this.setModel(i18nModel, "i18n");
       }
    });
 });
